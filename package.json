@@ -1,0 +1,30 @@
+{
+  "name": "sprint_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch",
+    "learn": "learnyounode",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fanur1991/Fanur1991-ITA_sprint_3.git"
+  },
+  "author": "Fanur Khusainov",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Fanur1991/Fanur1991-ITA_sprint_3/issues"
+  },
+  "homepage": "https://github.com/Fanur1991/Fanur1991-ITA_sprint_3#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
