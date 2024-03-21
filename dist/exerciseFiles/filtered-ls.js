@@ -23,11 +23,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const path = __importStar(require("node:path"));
 const fs = __importStar(require("fs"));
-const path = process.argv[2];
-const printNumberOfNewlines = (path) => {
-    return fs.readFileSync(path, 'utf-8').split('\n').length - 1;
-};
-console.log(printNumberOfNewlines(path));
-console.log(process.argv);
-//# sourceMappingURL=my-first-io.js.map
+const filePath = process.argv[2];
+const fileExt = process.argv[3];
+function filteredList(filePath, fileExt) {
+    fs.readdir(filePath, 'utf-8', (err, data) => {
+        if (err)
+            throw new Error(`Error reading file: ${err.message}`);
+        else
+            data
+                .filter((extItem) => path.extname(extItem) === `.${fileExt}`)
+                .forEach((item) => console.log(item));
+    });
+}
+filteredList(filePath, fileExt);
+//# sourceMappingURL=filtered-ls.js.map
