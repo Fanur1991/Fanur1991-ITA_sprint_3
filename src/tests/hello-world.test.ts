@@ -1,6 +1,6 @@
 import { sayHelloHandle } from '../exerciseFiles/hello-world';
 
-describe('HELLO WORLD test', () => {
+describe('Hello world function test', () => {
   test('Should return HELLO WORLD in console', () => {
     const logSpy = jest.spyOn(console, 'log').mockImplementation();
 
