@@ -23,11 +23,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.myFirstIO = void 0;
 const fs = __importStar(require("fs"));
-const path = process.argv[2];
-const printNumberOfNewlines = (path) => {
-    return fs.readFileSync(path, 'utf-8').split('\n').length - 1;
+const filePath = process.argv[2] || process.argv0;
+const myFirstIO = (filePath) => {
+    const result = fs.readFileSync(filePath, 'utf-8').split('\n').length - 1;
+    return result;
 };
-console.log(printNumberOfNewlines(path));
-console.log(process.argv);
+exports.myFirstIO = myFirstIO;
+console.log((0, exports.myFirstIO)(filePath));
 //# sourceMappingURL=my-first-io.js.map

@@ -23,37 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.myFirstAsyncIO = void 0;
+const my_first_io_1 = require("../exerciseFiles/my-first-io");
 const fs = __importStar(require("fs"));
-const filePath = process.argv[2] || process.argv0;
-const myFirstAsyncIO = (path) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, 'utf-8', (err, data) => {
-            if (err)
-                reject(`Error reading file: ${err.message}`);
-            else
-                resolve(data.split('\n').length - 1);
-        });
+describe('My first IO function test', () => {
+    test('should return the correct number of lines in the file', () => {
+        const tempFilePath = 'tempFile.txt';
+        const content = 'Ten\nun\nbuen\ndia\namigo';
+        fs.writeFileSync(tempFilePath, content);
+        const actualLines = (0, my_first_io_1.myFirstIO)(tempFilePath);
+        expect(actualLines).toBe(4);
+        // elimina el archivo de prueba después de la prueba
+        fs.unlinkSync(tempFilePath);
     });
-};
-exports.myFirstAsyncIO = myFirstAsyncIO;
-// opcion 1 a traves async/await
-// export const main = async (path: string) => {
-//   try {
-//     if (!path) throw new Error('File path is missing.');
-//     const numberOfNewlines = await myFirstAsyncIO(path);
-//     console.log(numberOfNewlines);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-// main(filePath);
-// opcion 2 a traves then/catch
-(0, exports.myFirstAsyncIO)(filePath)
-    .then((myFirstAsyncIO) => {
-    console.log(myFirstAsyncIO);
-})
-    .catch((error) => {
-    console.log(error);
 });
-//# sourceMappingURL=my-first-async-io.js.map
+//# sourceMappingURL=my-first-io.test.js.map

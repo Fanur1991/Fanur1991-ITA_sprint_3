@@ -39,7 +39,8 @@ const httpJsonApiServer = (port) => {
         if (req.method === 'GET' && requestURL.pathname === PARSETIME_ENDPOINT) {
             handleParseTimeRequest(queryParams, res);
         }
-        else if (req.method === 'GET' && requestURL.pathname === UNIXTIME_ENDPOINT) {
+        else if (req.method === 'GET' &&
+            requestURL.pathname === UNIXTIME_ENDPOINT) {
             handleUnixTimeRequest(queryParams, res);
         }
         else {
@@ -94,7 +95,7 @@ function handleUnixTimeRequest(queryParams, res) {
         handleError(res, 400, 'ISO parameter is missing');
         return;
     }
-    const unixTime = (new Date(isoValue)).getTime();
+    const unixTime = new Date(isoValue).getTime();
     sendJSONResponse(res, { unixtime: unixTime });
 }
 function handleError(res, statusCode, message) {

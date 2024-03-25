@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 
-const path = process.argv[2];
+const filePath = process.argv[2] || process.argv0;
 
-const printNumberOfNewlines = (path: string) => {
-  return fs.readFileSync(path, 'utf-8').split('\n').length - 1;
+export const myFirstIO = (filePath: string) => {
+  const result = fs.readFileSync(filePath, 'utf-8').split('\n').length - 1;
+
+  return result;
 };
 
-console.log(printNumberOfNewlines(path));
-
-console.log(process.argv);
+console.log(myFirstIO(filePath));

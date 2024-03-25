@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 
-const file = process.argv[2];
+const filePath = process.argv[2] || process.argv0;
 
-const printNumberOfNewlines = (path: string): Promise<number> => {
+export const myFirstAsyncIO = (path: string): Promise<number> => {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) reject(`Error reading file: ${err.message}`);
@@ -12,23 +12,23 @@ const printNumberOfNewlines = (path: string): Promise<number> => {
 };
 
 // opcion 1 a traves async/await
-const main = async () => {
-  try {
-    if (!file) throw new Error('File path is missing.');
-    const numberOfNewlines = await printNumberOfNewlines(file);
-    console.log(numberOfNewlines);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const main = async (path: string) => {
+//   try {
+//     if (!path) throw new Error('File path is missing.');
+//     const numberOfNewlines = await myFirstAsyncIO(path);
+//     console.log(numberOfNewlines);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-main();
+// main(filePath);
 
 // opcion 2 a traves then/catch
-// printNumberOfNewlines(file)
-//   .then((numberOfNewlines) => {
-//     console.log(numberOfNewlines);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+myFirstAsyncIO(filePath)
+  .then((myFirstAsyncIO) => {
+    console.log(myFirstAsyncIO);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
