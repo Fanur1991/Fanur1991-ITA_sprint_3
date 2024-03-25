@@ -1,8 +1,8 @@
-const myModule = require('./my-module');
+const myModuleFn = require('./my-module');
 const filePath = process.argv[2];
 const fileExt = process.argv[3];
 
-myModule(filePath, fileExt, (err: any, data: string[]) => {
+myModuleFn(filePath, fileExt, (err: string, data: string[]) => {
   if (err) {
     console.log(err);
     return;

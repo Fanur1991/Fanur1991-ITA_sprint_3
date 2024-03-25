@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/bl": "^5.1.0",
     "@types/jest": "^29.5.12",
+    "@types/mock-fs": "^4.13.4",
     "@types/node": "^20.11.30",
     "@types/through2-map": "^3.0.4",
     "@types/valid-url": "^1.0.7",
@@ -35,6 +36,7 @@
     "valid-url": "^1.0.9"
   },
   "dependencies": {
+    "mock-fs": "^5.2.0",
     "through2-map": "^3.0.0"
   }
 }

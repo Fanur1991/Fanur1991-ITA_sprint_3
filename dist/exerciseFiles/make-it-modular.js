@@ -1,8 +1,8 @@
 "use strict";
-const myModule = require('./my-module');
+const myModuleFn = require('./my-module');
 const filePath = process.argv[2];
 const fileExt = process.argv[3];
-myModule(filePath, fileExt, (err, data) => {
+myModuleFn(filePath, fileExt, (err, data) => {
     if (err) {
         console.log(err);
         return;

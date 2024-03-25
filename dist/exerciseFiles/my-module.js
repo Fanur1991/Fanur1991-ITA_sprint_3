@@ -24,11 +24,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
-const path = __importStar(require("node:path"));
+const path = __importStar(require("path"));
 function myModule(filePath, fileExt, callback) {
     fs.readdir(filePath, 'utf-8', (err, data) => {
-        if (err)
-            return callback(err);
+        if (err) {
+            callback(err);
+            return;
+        }
         else {
             const filteredList = data.filter((extItem) => path.extname(extItem) === `.${fileExt}`);
             callback(null, filteredList);

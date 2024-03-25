@@ -9,7 +9,7 @@ describe('My first async IO function test', () => {
     await new Promise((resolve, reject) => {
       fs.writeFile(tempFilePath, content, 'utf-8', (error) => {
         if (error) {
-          console.log(error);
+          console.error(error.message);
           reject(error);
           return;
         }
@@ -21,7 +21,9 @@ describe('My first async IO function test', () => {
       const actualLines = await myFirstAsyncIO(tempFilePath);
       expect(actualLines).toBe(4);
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     } finally {
       fs.unlinkSync(tempFilePath);
     }

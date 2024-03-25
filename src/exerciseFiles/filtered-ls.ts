@@ -1,12 +1,12 @@
 import * as path from 'node:path';
 import * as fs from 'fs';
 
-const filePath = process.argv[2];
-const fileExt = process.argv[3];
+const filePath = process.argv[2] || process.argv0;
+const fileExt = process.argv[3] || process.argv[1];
 
-function filteredList(filePath: string, fileExt: string) {
+export function filteredLs(filePath: string, fileExt: string) {
   fs.readdir(filePath, 'utf-8', (err, data) => {
-    if (err) throw new Error(`Error reading file: ${err.message}`);
+    if (err) console.log(err);
     else
       data
         .filter((extItem) => path.extname(extItem) === `.${fileExt}`)
@@ -14,4 +14,4 @@ function filteredList(filePath: string, fileExt: string) {
   });
 }
 
-filteredList(filePath, fileExt);
+filteredLs(filePath, fileExt);
