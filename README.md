@@ -31,10 +31,18 @@ This project is organized into exercises that cover different aspects of Node.js
 - **Level 2:** Creating custom scripts for each exercise.
 - **Level 3:** Implementing exercises in TypeScript and adding tests.
 
-To run a specific exercise, use the following command, substituting `exercise_name.ts` with the name of the file:
+To run cli of exercises, use the following command:
 
 ```bash
-ts-node exercise_name.ts
+npm run learn
+or
+learnyounode
+```
+
+for verify a exercise
+
+```bash
+leatnyounode verify path/to/your/file
 ```
 
 For testing:
