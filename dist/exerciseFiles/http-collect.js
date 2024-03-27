@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.isValidUrl = void 0;
 const http = __importStar(require("http"));
 const validUrl = __importStar(require("valid-url"));
 // import { BufferList } from 'bl';
@@ -32,6 +33,7 @@ const isValidUrl = (url) => {
         fetchData(url);
     return;
 };
+exports.isValidUrl = isValidUrl;
 // opcion 1 sin uso una biblioteca
 function fetchData(url) {
     let totalChar = 0;
@@ -41,7 +43,9 @@ function fetchData(url) {
             totalChar += data.length;
             rawData += data;
         });
-        res.on('error', (err) => console.log(err));
+        res.on('error', (err) => {
+            console.log(err);
+        });
         res.on('end', () => {
             console.log(totalChar);
             console.log(rawData);
@@ -69,5 +73,5 @@ function fetchData(url) {
 //     });
 //   });
 // }
-isValidUrl(url);
+(0, exports.isValidUrl)(url);
 //# sourceMappingURL=http-collect.js.map

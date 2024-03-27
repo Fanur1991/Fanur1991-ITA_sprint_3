@@ -23,16 +23,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.isValidUrl = void 0;
 const http = __importStar(require("http"));
 const validUrl = __importStar(require("valid-url"));
 const url = process.argv[2];
 const isValidUrl = (url) => {
     if (validUrl.isWebUri(url))
-        fetchData();
+        fetchData(url);
     else
         return;
 };
-function fetchData() {
+exports.isValidUrl = isValidUrl;
+function fetchData(url) {
     http.get(url, (res) => {
         res.setEncoding('utf-8').on('data', function (data) {
             console.log(data);
@@ -43,5 +45,5 @@ function fetchData() {
         res.on('end', function () { });
     });
 }
-isValidUrl(url);
+(0, exports.isValidUrl)(url);
 //# sourceMappingURL=http-client.js.map

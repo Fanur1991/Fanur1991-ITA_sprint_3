@@ -4,7 +4,7 @@ import * as validUrl from 'valid-url';
 
 const url = process.argv[2];
 
-const isValidUrl = (url: string) => {
+export const isValidUrl = (url: string) => {
   if (validUrl.isWebUri(url)) fetchData(url);
   return;
 };
@@ -19,7 +19,9 @@ function fetchData(url: string) {
       totalChar += data.length;
       rawData += data;
     });
-    res.on('error', (err) => console.log(err));
+    res.on('error', (err) => {
+      console.log(err);
+    });
     res.on('end', () => {
       console.log(totalChar);
       console.log(rawData);
