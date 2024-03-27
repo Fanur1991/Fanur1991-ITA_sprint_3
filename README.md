@@ -6,6 +6,7 @@ This project dives deep into the core concepts of Node.js and server-side progra
 
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-be3d19?style=flat-square&logo=jest&logoColor=white)
 
 ## Getting Started
 
