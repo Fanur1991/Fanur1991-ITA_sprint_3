@@ -13,7 +13,7 @@ To clone and run this project, you'll need Git, Node.js, and npm installed on yo
 
 ```bash
 # Clone this repository
-git clone [https://your-repository-url.git](https://github.com/Fanur1991/Fanur1991-ITA_sprint_3)
+git clone https://github.com/Fanur1991/Fanur1991-ITA_sprint_3
 
 # Go into the repository
 cd your-project-directory
