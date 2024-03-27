@@ -41,13 +41,15 @@ learnyounode
 for verify a exercise
 
 ```bash
-leatnyounode verify path/to/your/file
+learnyounode verify path/to/your/file
 ```
 
 For testing:
 
 ```bash
-npm test
+npm run test
+or
+npm run test:watch
 ```
 
 ## Acknowledgments
