@@ -12,16 +12,16 @@ This project dives deep into the core concepts of Node.js and server-side progra
 
 To clone and run this project, you'll need Git, Node.js, and npm installed on your computer. From your command line:
 
-\```bash
+```bash
 # Clone this repository
-git clone https://your-repository-url.git
+git clone [https://your-repository-url.git](https://github.com/Fanur1991/Fanur1991-ITA_sprint_3)
 
 # Go into the repository
 cd your-project-directory
 
 # Install dependencies
 npm install
-\```
+```
 
 ## How to Use
 
@@ -33,15 +33,15 @@ This project is organized into exercises that cover different aspects of Node.js
 
 To run a specific exercise, use the following command, substituting `exercise_name.ts` with the name of the file:
 
-\```bash
+```bash
 ts-node exercise_name.ts
-\```
+```
 
 For testing:
 
-\```bash
+```bash
 npm test
-\```
+```
 
 ## Acknowledgments
 
