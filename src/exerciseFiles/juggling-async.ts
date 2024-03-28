@@ -22,17 +22,17 @@ function fetchData(url: string): Promise<string> {
   });
 }
 
-const processUrlsSequentially = async () => {
+export const jugglingAsync = async (urls: string[]) => {
   for (const url of urls) {
     if (isValidUrl(url)) {
       try {
         const response = await fetchData(url);
         console.log(response);
       } catch (error) {
-        console.error(`Error fetching data from ${url}:`, error);
+        console.error(error);
       }
     }
   }
 };
 
-processUrlsSequentially();
+jugglingAsync(urls);

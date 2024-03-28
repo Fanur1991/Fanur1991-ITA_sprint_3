@@ -31,12 +31,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
+const path_1 = __importDefault(require("path"));
 const my_first_async_io_1 = require("../exerciseFiles/my-first-async-io");
 describe('My first async IO function test', () => {
     test('should return the correct number of lines in the file', () => __awaiter(void 0, void 0, void 0, function* () {
-        const tempFilePath = 'tempFile.txt';
+        const tempFilePath = path_1.default.resolve('tempFile.txt');
         const content = 'Ten\nun\nbuen\ndia\namigo';
         yield new Promise((resolve, reject) => {
             fs.writeFile(tempFilePath, content, 'utf-8', (error) => {

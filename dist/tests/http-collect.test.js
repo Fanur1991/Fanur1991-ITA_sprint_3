@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const http_collect_1 = require("../exerciseFiles/http-collect");
 const nock_1 = __importDefault(require("nock"));
 describe('HTTP collect function test', () => {
-    it('должно получать данные, подсчитывать их и выводить в консоль', () => __awaiter(void 0, void 0, void 0, function* () {
+    it('should receive data, count it and output it to the console', () => __awaiter(void 0, void 0, void 0, function* () {
         const mockUrl = 'http://example.com';
         const chunks = ['Data part 1', ' Data part 2'];
         const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();

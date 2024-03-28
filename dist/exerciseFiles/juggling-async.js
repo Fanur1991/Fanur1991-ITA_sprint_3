@@ -32,6 +32,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.jugglingAsync = void 0;
 const http = __importStar(require("http"));
 const validUrl = __importStar(require("valid-url"));
 const urls = process.argv.slice(2);
@@ -52,7 +53,7 @@ function fetchData(url) {
         });
     });
 }
-const processUrlsSequentially = () => __awaiter(void 0, void 0, void 0, function* () {
+const jugglingAsync = (urls) => __awaiter(void 0, void 0, void 0, function* () {
     for (const url of urls) {
         if (isValidUrl(url)) {
             try {
@@ -60,10 +61,11 @@ const processUrlsSequentially = () => __awaiter(void 0, void 0, void 0, function
                 console.log(response);
             }
             catch (error) {
-                console.error(`Error fetching data from ${url}:`, error);
+                console.error(error);
             }
         }
     }
 });
-processUrlsSequentially();
+exports.jugglingAsync = jugglingAsync;
+(0, exports.jugglingAsync)(urls);
 //# sourceMappingURL=juggling-async.js.map

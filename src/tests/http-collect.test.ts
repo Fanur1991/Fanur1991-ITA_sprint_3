@@ -2,7 +2,7 @@ import { isValidUrl } from '../exerciseFiles/http-collect';
 import nock from 'nock';
 
 describe('HTTP collect function test', () => {
-  it('должно получать данные, подсчитывать их и выводить в консоль', async () => {
+  it('should receive data, count it and output it to the console', async () => {
     const mockUrl = 'http://example.com';
     const chunks = ['Data part 1', ' Data part 2'];
     const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();

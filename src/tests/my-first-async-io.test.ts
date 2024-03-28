@@ -1,9 +1,10 @@
 import * as fs from 'fs';
+import path from 'path';
 import { myFirstAsyncIO } from '../exerciseFiles/my-first-async-io';
 
 describe('My first async IO function test', () => {
   test('should return the correct number of lines in the file', async () => {
-    const tempFilePath = 'tempFile.txt';
+    const tempFilePath = path.resolve('tempFile.txt');
     const content = 'Ten\nun\nbuen\ndia\namigo';
 
     await new Promise((resolve, reject) => {
