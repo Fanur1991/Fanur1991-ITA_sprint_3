@@ -26,8 +26,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.filteredLs = void 0;
 const path = __importStar(require("node:path"));
 const fs = __importStar(require("fs"));
-const filePath = process.argv[2] || process.argv0;
-const fileExt = process.argv[3] || process.argv[1];
+const filePath = process.argv[2];
+const fileExt = process.argv[3];
 function filteredLs(filePath, fileExt) {
     fs.readdir(filePath, 'utf-8', (err, data) => {
         if (err)

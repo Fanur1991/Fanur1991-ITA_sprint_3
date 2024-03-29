@@ -1,8 +1,8 @@
 import * as path from 'node:path';
 import * as fs from 'fs';
 
-const filePath = process.argv[2] || process.argv0;
-const fileExt = process.argv[3] || process.argv[1];
+const filePath = process.argv[2];
+const fileExt = process.argv[3];
 
 export function filteredLs(filePath: string, fileExt: string) {
   fs.readdir(filePath, 'utf-8', (err, data) => {
