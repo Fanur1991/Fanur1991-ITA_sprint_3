@@ -14,4 +14,6 @@ export function filteredLs(filePath: string, fileExt: string) {
   });
 }
 
-filteredLs(filePath, fileExt);
+if (require.main === module) {
+  filteredLs(filePath, fileExt);
+}

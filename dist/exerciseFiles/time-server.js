@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getTimeServer = void 0;
 const net_1 = __importDefault(require("net"));
 const PORT = process.argv[2];
 function getFullDate() {
@@ -20,6 +21,8 @@ const getTimeServer = (port) => {
         socket.write(`${getFullDate()}\n`, () => socket.end());
     });
     server.listen(port);
+    return server;
 };
-getTimeServer(PORT);
+exports.getTimeServer = getTimeServer;
+(0, exports.getTimeServer)(PORT);
 //# sourceMappingURL=time-server.js.map

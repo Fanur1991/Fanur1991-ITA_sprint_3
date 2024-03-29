@@ -39,5 +39,7 @@ function filteredLs(filePath, fileExt) {
     });
 }
 exports.filteredLs = filteredLs;
-filteredLs(filePath, fileExt);
+if (require.main === module) {
+    filteredLs(filePath, fileExt);
+}
 //# sourceMappingURL=filtered-ls.js.map

@@ -21,6 +21,7 @@ const httpUppercaserer = (port) => {
         }
     });
     server.listen(port);
+    return server;
 };
 exports.httpUppercaserer = httpUppercaserer;
 (0, exports.httpUppercaserer)(PORT);

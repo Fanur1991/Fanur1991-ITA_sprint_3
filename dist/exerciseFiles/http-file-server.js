@@ -15,6 +15,7 @@ const httpFileServer = (port, filePath) => {
         fileStream.pipe(res);
     });
     server.listen(port);
+    return server;
 };
 exports.httpFileServer = httpFileServer;
 (0, exports.httpFileServer)(PORT, filePath);

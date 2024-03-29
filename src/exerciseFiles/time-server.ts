@@ -15,11 +15,12 @@ function getFullDate() {
   return formatedDate;
 }
 
-const getTimeServer = (port: string) => {
+export const getTimeServer = (port: string) => {
   const server = net.createServer(function (socket) {
     socket.write(`${getFullDate()}\n`, () => socket.end());
   });
   server.listen(port);
+  return server;
 };
 
 getTimeServer(PORT);

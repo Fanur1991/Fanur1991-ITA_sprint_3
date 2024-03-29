@@ -3,7 +3,7 @@ import map from 'through2-map';
 
 const PORT = process.argv[2];
 
-export const httpUppercaserer = (port: string) => {
+export const httpUppercaserer = (port: string): http.Server => {
   const server = http.createServer(
     (
       req: http.IncomingMessage,
@@ -23,6 +23,7 @@ export const httpUppercaserer = (port: string) => {
     }
   );
   server.listen(port);
+  return server;
 };
 
 httpUppercaserer(PORT);
